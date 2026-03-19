@@ -6,6 +6,7 @@
 <title>Harin Jayawardene | Portfolio</title>
 
 <style>
+/* --- GENERAL STYLING --- */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -13,48 +14,44 @@ body {
   color: #e6f1ff;
   scroll-behavior: smooth;
 }
+a { text-decoration: none; color: inherit; }
+h1,h2,h3 { margin: 0; }
 
-/* HEADER */
-header {
+/* --- HERO SECTION --- */
+.hero {
   text-align: center;
-  padding: 70px 20px;
-  backdrop-filter: blur(10px);
+  padding: 100px 20px;
+  backdrop-filter: blur(5px);
   background: rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-header h1 {
-  font-size: 2.8rem;
-  margin: 0;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-header p {
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
   color: #bcd;
 }
 
-/* NAVBAR */
-nav {
-  text-align: center;
-  padding: 12px;
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.4);
-}
-
-nav a {
-  margin: 0 15px;
-  color: #00e0ff;
-  text-decoration: none;
+.hero .buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 24px;
+  border-radius: 25px;
   font-weight: bold;
+  background: #00e0ff;
+  color: #000;
   transition: 0.3s;
 }
 
-nav a:hover {
-  color: #ffffff;
+.hero .buttons a:hover {
+  background: #ffffff;
 }
 
-/* SECTIONS */
+/* --- SECTIONS --- */
 section {
   max-width: 1000px;
   margin: auto;
@@ -65,9 +62,49 @@ section {
 h2 {
   border-left: 5px solid #00e0ff;
   padding-left: 10px;
+  margin-bottom: 20px;
 }
 
-/* CARDS */
+/* --- EXPERTISE BOXES --- */
+.expertise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.expertise .box {
+  flex: 1 1 250px;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.expertise .box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,224,255,0.4);
+}
+
+/* --- SKILLS TAGS --- */
+.skills span {
+  display: inline-block;
+  background: #00e0ff;
+  color: black;
+  padding: 6px 12px;
+  margin: 5px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.skills span:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+/* --- CARDS --- */
 .card {
   background: rgba(255,255,255,0.05);
   padding: 20px;
@@ -89,158 +126,171 @@ h2 {
   box-shadow: 0 0 20px rgba(0,224,255,0.4);
 }
 
-/* SKILLS */
-.skills span {
-  display: inline-block;
-  background: #00e0ff;
-  color: black;
-  padding: 6px 12px;
-  margin: 5px;
-  border-radius: 20px;
-  transition: 0.3s;
-}
-
-.skills span:hover {
-  background: white;
-  transform: scale(1.1);
-}
-
-/* TIMELINE */
+/* --- TIMELINE --- */
 .timeline {
   border-left: 3px solid #00e0ff;
   padding-left: 20px;
 }
 
-/* FOOTER */
+/* --- FOOTER --- */
 footer {
   text-align: center;
   padding: 20px;
   background: rgba(0,0,0,0.4);
+}
+
+/* --- NAV --- */
+nav {
+  text-align: center;
+  padding: 12px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.4);
+  z-index: 10;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #00e0ff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffffff;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Harin Dinuka Jayawardene</h1>
-  <p>Electronic Engineer | IoT | Embedded Systems | Cloud Integration</p>
-  <p>Email: harinjayawardene44@gmail.com | Mobile: +94 71 699 0987</p>
-</header>
-
+<!-- NAV -->
 <nav>
-  <a href="#about">About</a>
+  <a href="#about">Profile</a>
   <a href="#skills">Skills</a>
   <a href="#experience">Experience</a>
   <a href="#projects">Projects</a>
 </nav>
 
+<!-- HERO -->
+<section class="hero">
+  <h1>Harin Jayawardene</h1>
+  <p>Electronic Engineer | IoT | Embedded Systems | Cloud Integration</p>
+  <div class="buttons">
+    <a href="#about">Let's Talk</a>
+    <a href="#projects">Scroll Discover</a>
+  </div>
+</section>
+
+<!-- PROFILE -->
 <section id="about">
   <h2>Profile</h2>
   <div class="card">
-    <p>
-      Electronic Engineer with 3+ years of experience in IoT systems and embedded development.
-      Skilled in Python, SQL, MQTT, AWS Lambda, and Grafana. Experienced in building ESP32-based systems,
-      real-time dashboards, and scalable cloud APIs.
-    </p>
+    <p>I am an Electronic Engineer with 3+ years of specialized experience bridging the gap between physical hardware and cloud infrastructure.</p>
+    <p>Expertise: Designing robust IoT systems, ESP32 microcontrollers, Python, SQL, MQTT, AWS Lambda, Grafana dashboards, and React interfaces.</p>
   </div>
 </section>
 
+<!-- EXPERTISE -->
+<section>
+  <h2>Embedded Mastery & Cloud Integration</h2>
+  <div class="expertise">
+    <div class="box">
+      <h3>Embedded Mastery</h3>
+      <p>ESP32, Arduino, PLC, SCADA, Nextion HMI</p>
+    </div>
+    <div class="box">
+      <h3>Cloud Integration</h3>
+      <p>AWS Lambda, REST APIs, MQTT, WebSockets</p>
+    </div>
+    <div class="box">
+      <h3>Data & Visualization</h3>
+      <p>SQL, Python, Grafana Dashboards, API Integration</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
 <section id="skills">
   <h2>Technical Skills</h2>
-
   <div class="card skills">
     <h3>Languages</h3>
-    <span>Python</span><span>SQL</span><span>C</span><span>Java</span>
-    <p>Python and SQL for data handling, API integrations, and automation. C and Java for embedded firmware and device applications.</p>
+    <span>Python</span><span>SQL</span><span>C</span><span>Java</span><span>JavaScript</span>
   </div>
-
   <div class="card skills">
     <h3>Cloud & APIs</h3>
-    <span>AWS Lambda</span><span>Flask</span><span>REST APIs</span><span>Postman</span>
-    <p>Building cloud functions, REST APIs, and testing them for IoT and smart device integrations using AWS Lambda and Flask.</p>
+    <span>AWS Lambda</span><span>Flask</span><span>Node.js</span><span>REST APIs</span><span>Postman</span>
   </div>
-
   <div class="card skills">
     <h3>IoT & Data</h3>
-    <span>MQTT</span><span>Grafana</span><span>API Integration</span>
-    <p>Collecting, visualizing, and managing IoT data in real-time with MQTT, Grafana dashboards, and API integrations.</p>
+    <span>MQTT</span><span>Grafana</span><span>WebSockets</span><span>Data Pipelines</span>
   </div>
-
   <div class="card skills">
     <h3>Embedded Systems</h3>
-    <span>ESP32</span><span>Arduino</span><span>PLC</span><span>SCADA</span><span>Nextion HMI</span>
-    <p>Developing ESP32 and Arduino-based devices with HMI interfaces, industrial automation (PLC & SCADA), and control systems.</p>
+    <span>ESP32</span><span>Arduino</span><span>PLC</span><span>SCADA</span><span>Nextion HMI</span><span>PCB Design</span>
   </div>
-
   <div class="card skills">
     <h3>Tools & OS</h3>
-    <span>Linux</span><span>Windows</span><span>Git</span><span>AutoCAD</span>
-    <p>Using Linux/Windows for development, Git for version control, and AutoCAD for PCB and mechanical designs.</p>
+    <span>Linux</span><span>Windows</span><span>Git</span><span>Docker</span><span>AutoCAD</span><span>EasyEDA</span>
   </div>
-
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience">
   <h2>Professional Experience</h2>
-
   <div class="timeline">
-
     <div class="card">
       <h3>OneSmartBee Pvt Ltd</h3>
       <p><strong>Electronic Engineer (2023 – Present)</strong></p>
       <ul>
-        <li>Improved IoT mobile applications by debugging MQTT and API issues</li>
-        <li>Built energy monitoring systems using MQTT, Python, SQL, Grafana</li>
-        <li>Developed AWS Lambda integrations for Alexa smart home devices</li>
-        <li>Designed ESP32 + Nextion HMI systems for hospital queue management</li>
-        <li>Created Postman collections and API documentation</li>
+        <li>Debugged complex MQTT and REST API issues in IoT mobile applications.</li>
+        <li>Built end-to-end energy monitoring systems (MQTT, Python, SQL, Grafana).</li>
+        <li>Developed AWS Lambda integrations with Alexa smart home devices.</li>
+        <li>Designed ESP32 + Nextion HMI systems for hospital queue management.</li>
+        <li>Standardized API communication with Postman collections and documentation.</li>
       </ul>
     </div>
-
     <div class="card">
       <h3>Divor Automations Pvt Ltd</h3>
       <p><strong>Electronic Engineer Intern (2021 – 2022)</strong></p>
       <ul>
-        <li>Built IoT hydroponics system with web interface</li>
-        <li>Designed PCBs using EasyEDA</li>
-        <li>Developed React-based device dashboards</li>
-        <li>Applied ML for object detection</li>
+        <li>Built IoT hydroponics system with web interface.</li>
+        <li>Designed custom PCBs using EasyEDA.</li>
+        <li>Developed React dashboards for real-time sensor data.</li>
+        <li>Applied basic ML for object detection in workflows.</li>
       </ul>
     </div>
-
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
-  <h2>Projects</h2>
-
+  <h2>Featured Projects</h2>
   <div class="card">
     <h3>Indoor Navigation System</h3>
-    <p>ESP32-based Wi-Fi tracking system with Flutter app and Azure backend.</p>
-    <p>Real-time indoor location tracking with a mobile interface, ideal for hospitals or large office environments.</p>
+    <p>ESP32 Wi-Fi tracking system with Flutter app and Azure backend for indoor positioning.</p>
+    <p>Tags: ESP32, Wi-Fi Tracking, Flutter, Azure</p>
   </div>
-
   <div class="card">
     <h3>Miner Tracking Device</h3>
-    <p>Helmet-mounted ESP32 tracking system with filtering algorithms.</p>
-    <p>Tracks miners underground with signal correction algorithms to improve safety and monitoring.</p>
+    <p>Helmet-mounted wearable ESP32 device with filtering algorithms for subterranean tracking.</p>
+    <p>Tags: ESP32, Wearable Tech, Algorithms, Safety</p>
   </div>
-
   <div class="card">
     <h3>Automated Pot Molding Machine</h3>
-    <p>CNC-inspired automation system using microcontrollers and PCB design.</p>
-    <p>Automates pot molding using microcontrollers, increasing production efficiency and reducing manual work.</p>
+    <p>CNC-inspired automation using microcontrollers, custom PCBs, and stepper motor control.</p>
+    <p>Tags: Microcontrollers, PCB Design, CNC, Automation</p>
   </div>
-
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Harin Jayawardene</p>
+  <p>© 2026 Harin Jayawardene | Built with HTML, CSS & JS</p>
 </footer>
 
+<!-- SCRIPTS -->
 <script>
-// SCROLL ANIMATION
 const cards = document.querySelectorAll('.card');
 
 function revealCards() {
@@ -254,17 +304,14 @@ function revealCards() {
 window.addEventListener('scroll', revealCards);
 revealCards();
 
-// ACTIVE NAV LINK
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
-
 window.addEventListener("scroll", () => {
   let current = "";
   sections.forEach(section => {
     const sectionTop = section.offsetTop - 100;
     if (scrollY >= sectionTop) current = section.getAttribute("id");
   });
-
   navLinks.forEach(a => {
     a.style.color = "#00e0ff";
     if (a.getAttribute("href") === "#" + current) a.style.color = "#ffffff";
