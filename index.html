@@ -143,41 +143,6 @@ h2 { border-left: 6px solid #00e0ff; padding-left: 12px; margin-bottom: 30px; fo
 /* --- TIMELINE --- */
 .timeline { border-left: 3px solid #00e0ff; padding-left: 22px; }
 
-/* --- CONTRIBUTION CALENDAR --- */
-#calendar {
-  display: grid;
-  grid-template-columns: repeat(18, 18px);
-  grid-auto-rows: 18px;
-  gap: 4px;
-  justify-content: center;
-  margin-top: 25px;
-}
-.day {
-  width: 18px; height: 18px;
-  border-radius: 4px;
-  background-color: #1e2a38;
-  position: relative;
-  transition: 0.3s;
-}
-.day[data-count="1"] { background-color: #c6e48b; }
-.day[data-count="2"] { background-color: #7bc96f; }
-.day[data-count="3"] { background-color: #239a3b; }
-.day[data-count="4"] { background-color: #196127; }
-.day:hover::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: -28px; left: 50%;
-  transform: translateX(-50%);
-  padding: 4px 8px;
-  background: #000;
-  color: #fff;
-  font-size: 10px;
-  border-radius: 4px;
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 10;
-}
-
 /* --- FOOTER --- */
 footer {
   text-align: center;
@@ -205,7 +170,6 @@ footer {
   <a href="#skills">Skills</a>
   <a href="#experience">Experience</a>
   <a href="#projects">Projects</a>
-  <a href="#activity">Activity</a>
 </nav>
 
 <!-- HERO -->
@@ -213,7 +177,7 @@ footer {
   <h1>Harin Jayawardene</h1>
   <p>Electronic Engineer | IoT | Embedded Systems | Cloud Integration</p>
   <div class="buttons">
-    <a href="#about">Let's Talk</a>
+    <a href="tel:+947xxxxxxxx">Let's Talk</a>
     <a href="#projects">Scroll Discover</a>
   </div>
 </section>
@@ -285,7 +249,7 @@ footer {
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h2>Featured Projects</h2>
+  <h2>Current Projects</h2>
   <div class="card">
     <h3>Indoor Navigation System</h3>
     <p>ESP32 Wi-Fi tracking system with Flutter app & Azure backend.</p>
@@ -300,15 +264,9 @@ footer {
   </div>
 </section>
 
-<!-- CONTRIBUTION CALENDAR -->
-<section id="activity">
-  <h2>Recent Activity</h2>
-  <div id="calendar"></div>
-</section>
-
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Harin Jayawardene | Built with HTML, CSS & JS</p>
+  <p>© 2026 Harin Jayawardene</p>
 </footer>
 
 <script>
@@ -337,23 +295,6 @@ window.addEventListener("scroll", () => {
     a.style.color = "#00e0ff";
     if (a.getAttribute("href") === "#" + current) a.style.color = "#ffffff";
   });
-});
-
-// --- CONTRIBUTION CALENDAR ---
-const activity = [
-  { date: "2026-03-01", count: 2, text: "Updated ESP32 MQTT firmware" },
-  { date: "2026-03-02", count: 1, text: "Optimized AWS Lambda pipeline" },
-  { date: "2026-03-03", count: 3, text: "Added Grafana dashboard template" },
-  { date: "2026-03-04", count: 0, text: "No activity" },
-  { date: "2026-03-05", count: 4, text: "Released hospital queue v1.2" },
-];
-const calendar = document.getElementById("calendar");
-activity.forEach(day => {
-  const div = document.createElement("div");
-  div.className = "day";
-  div.dataset.count = day.count;
-  div.dataset.tooltip = `${day.date}: ${day.text}`;
-  calendar.appendChild(div);
 });
 </script>
 
