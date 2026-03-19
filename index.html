@@ -9,15 +9,18 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #e6f1ff;
   scroll-behavior: smooth;
 }
 
+/* HEADER */
 header {
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #1e293b, #0f172a);
+  padding: 70px 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 header h1 {
@@ -26,72 +29,93 @@ header h1 {
 }
 
 header p {
-  color: #94a3b8;
+  color: #bcd;
 }
 
+/* NAVBAR */
 nav {
   text-align: center;
-  background: #020617;
-  padding: 10px;
+  padding: 12px;
   position: sticky;
   top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.4);
 }
 
 nav a {
   margin: 0 15px;
-  color: #38bdf8;
+  color: #00e0ff;
   text-decoration: none;
   font-weight: bold;
-}
-
-section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-h2 {
-  border-bottom: 2px solid #38bdf8;
-  padding-bottom: 5px;
-}
-
-.card {
-  background: #1e293b;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 12px;
   transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+nav a:hover {
+  color: #ffffff;
 }
 
+/* SECTIONS */
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+/* TITLES */
+h2 {
+  border-left: 5px solid #00e0ff;
+  padding-left: 10px;
+}
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(0,224,255,0.4);
+}
+
+/* SKILLS */
 .skills span {
   display: inline-block;
-  background: #38bdf8;
+  background: #00e0ff;
   color: black;
-  padding: 6px 10px;
+  padding: 6px 12px;
   margin: 5px;
-  border-radius: 6px;
-  font-size: 0.9rem;
+  border-radius: 20px;
+  transition: 0.3s;
 }
 
+.skills span:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+/* TIMELINE */
 .timeline {
-  border-left: 3px solid #38bdf8;
+  border-left: 3px solid #00e0ff;
   padding-left: 20px;
 }
 
-.timeline div {
-  margin-bottom: 20px;
-}
-
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
-  background: #020617;
-  color: #94a3b8;
+  background: rgba(0,0,0,0.4);
 }
 </style>
 </head>
@@ -206,6 +230,48 @@ footer {
 <footer>
   <p>© 2026 Harin Jayawardene</p>
 </footer>
+
+<script>
+// SCROLL ANIMATION
+const cards = document.querySelectorAll('.card');
+
+function revealCards() {
+  const trigger = window.innerHeight * 0.85;
+
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+
+    if (top < trigger) {
+      card.classList.add('show');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealCards);
+revealCards();
+
+// ACTIVE NAV LINK
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(a => {
+    a.style.color = "#00e0ff";
+    if (a.getAttribute("href") === "#" + current) {
+      a.style.color = "#ffffff";
+    }
+  });
+});
+</script>
 
 </body>
 </html>
