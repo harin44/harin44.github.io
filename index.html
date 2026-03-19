@@ -3,43 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harin | Portfolio</title>
+<title>Harin Jayawardene | Portfolio</title>
 
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background: #0f172a;
   color: #e2e8f0;
+  scroll-behavior: smooth;
 }
 
 header {
-  padding: 40px;
   text-align: center;
-  background: #1e293b;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
 }
 
-h1 {
+header h1 {
+  font-size: 2.8rem;
   margin: 0;
-  font-size: 2.5rem;
+}
+
+header p {
+  color: #94a3b8;
+}
+
+nav {
+  text-align: center;
+  background: #020617;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 section {
-  padding: 40px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
-}
-
-.card {
-  background: #1e293b;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
+  padding: 40px 20px;
 }
 
 h2 {
@@ -47,19 +55,43 @@ h2 {
   padding-bottom: 5px;
 }
 
+.card {
+  background: #1e293b;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
 .skills span {
   display: inline-block;
   background: #38bdf8;
   color: black;
-  padding: 5px 10px;
+  padding: 6px 10px;
   margin: 5px;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.timeline {
+  border-left: 3px solid #38bdf8;
+  padding-left: 20px;
+}
+
+.timeline div {
+  margin-bottom: 20px;
 }
 
 footer {
   text-align: center;
   padding: 20px;
-  background: #1e293b;
+  background: #020617;
+  color: #94a3b8;
 }
 </style>
 </head>
@@ -67,53 +99,108 @@ footer {
 <body>
 
 <header>
-  <h1>Harin Jayawardene</h1>
-  <p>QA Engineer | IoT Developer | Tech Enthusiast</p>
+  <h1>Harin Dinuka Jayawardene</h1>
+  <p>Electronic Engineer | IoT | Embedded Systems | Cloud Integration</p>
+  <p>Email: harinjayawardene44@gmail.com | Mobile: +94 71 699 0987</p>
 </header>
 
-<section>
-  <h2>About Me</h2>
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+</nav>
+
+<section id="about">
+  <h2>Profile</h2>
   <div class="card">
-    <p>I am passionate about software quality, embedded systems, and building reliable applications using modern technologies.</p>
+    <p>
+      Electronic Engineer with 3+ years of experience in IoT systems and embedded development.
+      Skilled in Python, SQL, MQTT, AWS Lambda, and Grafana. Experienced in building ESP32-based systems,
+      real-time dashboards, and scalable cloud APIs.
+    </p>
   </div>
 </section>
 
-<section>
-  <h2>Skills</h2>
+<section id="skills">
+  <h2>Technical Skills</h2>
 
   <div class="card skills">
-    <h3>Frontend</h3>
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
+    <h3>Languages</h3>
+    <span>Python</span><span>SQL</span><span>C</span><span>Java</span>
   </div>
 
   <div class="card skills">
-    <h3>Backend / APIs</h3>
-    <span>REST APIs</span>
-    <span>MQTT</span>
+    <h3>Cloud & APIs</h3>
+    <span>AWS Lambda</span><span>Flask</span><span>REST APIs</span><span>Postman</span>
+  </div>
+
+  <div class="card skills">
+    <h3>IoT & Data</h3>
+    <span>MQTT</span><span>Grafana</span><span>API Integration</span>
   </div>
 
   <div class="card skills">
     <h3>Embedded Systems</h3>
-    <span>ESP32</span>
-    <span>Arduino</span>
+    <span>ESP32</span><span>Arduino</span><span>PLC</span><span>SCADA</span><span>Nextion HMI</span>
   </div>
 
   <div class="card skills">
-    <h3>Tools</h3>
-    <span>Git</span>
-    <span>GitHub</span>
-    <span>VS Code</span>
+    <h3>Tools & OS</h3>
+    <span>Linux</span><span>Windows</span><span>Git</span><span>AutoCAD</span>
+  </div>
+
+</section>
+
+<section id="experience">
+  <h2>Professional Experience</h2>
+
+  <div class="timeline">
+
+    <div class="card">
+      <h3>OneSmartBee Pvt Ltd</h3>
+      <p><strong>Electronic Engineer (2023 – Present)</strong></p>
+      <ul>
+        <li>Improved IoT mobile applications by debugging MQTT and API issues</li>
+        <li>Built energy monitoring systems using MQTT, Python, SQL, Grafana</li>
+        <li>Developed AWS Lambda integrations for Alexa smart home devices</li>
+        <li>Designed ESP32 + Nextion HMI systems for hospital queue management</li>
+        <li>Created Postman collections and API documentation</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Divor Automations Pvt Ltd</h3>
+      <p><strong>Electronic Engineer Intern (2021 – 2022)</strong></p>
+      <ul>
+        <li>Built IoT hydroponics system with web interface</li>
+        <li>Designed PCBs using EasyEDA</li>
+        <li>Developed React-based device dashboards</li>
+        <li>Applied ML for object detection</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
-<section>
+<section id="projects">
   <h2>Projects</h2>
+
   <div class="card">
-    <h3>Queue Management System</h3>
-    <p>ESP32-based system with MQTT and real-time display integration.</p>
+    <h3>Indoor Navigation System</h3>
+    <p>ESP32-based Wi-Fi tracking system with Flutter app and Azure backend.</p>
   </div>
+
+  <div class="card">
+    <h3>Miner Tracking Device</h3>
+    <p>Helmet-mounted ESP32 tracking system with filtering algorithms.</p>
+  </div>
+
+  <div class="card">
+    <h3>Automated Pot Molding Machine</h3>
+    <p>CNC-inspired automation system using microcontrollers and PCB design.</p>
+  </div>
+
 </section>
 
 <footer>
