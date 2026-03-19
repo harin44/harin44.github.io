@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Harin Jayawardene | Portfolio</title>
 
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
 <style>
 /* --- GENERAL --- */
 body {
@@ -73,22 +76,54 @@ h2 { border-left: 6px solid #00e0ff; padding-left: 12px; margin-bottom: 30px; fo
   backdrop-filter: blur(15px);
   transition: 0.3s;
   font-size: 0.95rem;
+  text-align: center;
 }
 .expertise .box:hover { transform: translateY(-5px) scale(1.03); box-shadow: 0 0 25px rgba(0,224,255,0.5); }
 .expertise h3 { margin-bottom: 12px; font-weight: 700; font-size: 1.2rem; }
 
-/* --- SKILLS --- */
-.skills { display: flex; flex-wrap: wrap; gap: 8px; }
-.skills span {
-  display: inline-block;
-  background: #00e0ff;
-  color: #000;
-  padding: 6px 14px;
-  border-radius: 25px;
-  font-size: 0.9rem;
+/* --- SKILLS GRID --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.skill-card {
+  background: rgba(255,255,255,0.06);
+  padding: 20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: 0.3s;
+  cursor: default;
+}
+
+.skill-card i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #00e0ff;
   transition: 0.3s;
 }
-.skills span:hover { background: #ffffff; transform: scale(1.1); }
+
+.skill-card span {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 25px rgba(0,224,255,0.5);
+}
+
+.skill-card:hover i { color: #ffffff; }
 
 /* --- CARDS --- */
 .card {
@@ -158,6 +193,7 @@ footer {
   .hero p { font-size: 1rem; }
   .expertise .box { padding: 18px; }
   .card { padding: 18px; }
+  .skill-card { width: 100px; height: 100px; padding: 15px; }
 }
 </style>
 </head>
@@ -186,7 +222,7 @@ footer {
 <section id="about">
   <h2>Profile</h2>
   <div class="card">
-    <p>I am an Electronic Engineer with 3+ years of specialized experience bridging the gap between hardware and cloud infrastructure.</p>
+    <p>I am an Electronic Engineer with 3+ years of specialized experience bridging hardware and cloud infrastructure.</p>
     <p>Expertise: IoT systems, ESP32, Python, SQL, MQTT, AWS Lambda, Grafana dashboards, and React interfaces.</p>
   </div>
 </section>
@@ -204,25 +240,18 @@ footer {
 <!-- SKILLS -->
 <section id="skills">
   <h2>Technical Skills</h2>
-  <div class="card skills">
-    <h3>Languages</h3>
-    <span>Python</span><span>SQL</span><span>C</span><span>Java</span><span>JS/TS</span>
-  </div>
-  <div class="card skills">
-    <h3>Cloud & APIs</h3>
-    <span>AWS Lambda</span><span>Flask</span><span>Node.js</span><span>REST APIs</span><span>Postman</span>
-  </div>
-  <div class="card skills">
-    <h3>IoT & Data</h3>
-    <span>MQTT</span><span>Grafana</span><span>WebSockets</span><span>Data Pipelines</span>
-  </div>
-  <div class="card skills">
-    <h3>Embedded Systems</h3>
-    <span>ESP32</span><span>Arduino</span><span>PLC</span><span>SCADA</span><span>Nextion HMI</span><span>PCB Design</span>
-  </div>
-  <div class="card skills">
-    <h3>Tools & OS</h3>
-    <span>Linux</span><span>Windows</span><span>Git</span><span>Docker</span><span>AutoCAD</span><span>EasyEDA</span>
+  <div class="skills-grid">
+    <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
+    <div class="skill-card"><i class="fas fa-database"></i><span>SQL</span></div>
+    <div class="skill-card"><i class="fas fa-c"></i><span>C</span></div>
+    <div class="skill-card"><i class="fab fa-js-square"></i><span>JS/TS</span></div>
+    <div class="skill-card"><i class="fas fa-cloud"></i><span>AWS Lambda</span></div>
+    <div class="skill-card"><i class="fas fa-server"></i><span>REST APIs</span></div>
+    <div class="skill-card"><i class="fas fa-microchip"></i><span>ESP32</span></div>
+    <div class="skill-card"><i class="fas fa-cogs"></i><span>Arduino</span></div>
+    <div class="skill-card"><i class="fas fa-chart-line"></i><span>Grafana</span></div>
+    <div class="skill-card"><i class="fab fa-linux"></i><span>Linux</span></div>
+    <div class="skill-card"><i class="fas fa-window-maximize"></i><span>Windows</span></div>
   </div>
 </section>
 
